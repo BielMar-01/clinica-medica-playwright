@@ -181,3 +181,83 @@ Os mesmos IDs devem ser utilizados na documentação, no gerenciador de tarefas 
 - AUTH-011 — Atualizar o navegador mantém a sessão;
 - AUTH-012 — Sessão expirada tenta utilizar o refresh token;
 - AUTH-013 — Refresh token inválido força retorno ao login.
+
+---
+
+# Funcionalidade: Proteção de rotas
+
+Como responsável pela segurança da Clínica Médica  
+Quero impedir o acesso não autenticado às páginas internas  
+Para garantir que somente usuários autenticados utilizem o sistema
+
+## Contexto
+
+```gherkin
+Dado que o usuário não possui uma sessão autenticada
+```
+
+## ROUTE-001 — Acesso não autenticado ao Dashboard
+
+**Prioridade:** Alta  
+**Tipo:** Segurança e controle de acesso  
+**Automação:** `tests/auth/protected-routes.spec.ts`
+
+```gherkin
+Cenário: ROUTE-001 - Usuário não autenticado tenta acessar o Dashboard
+  Dado que o usuário não está autenticado
+  Quando tentar acessar diretamente a rota "/dashboard"
+  Então deve ser redirecionado para a página de login
+  E o formulário de autenticação deve ser apresentado
+```
+
+### Validações automatizadas
+
+- Acesso direto à rota `/dashboard`;
+- Redirecionamento para `/login`;
+- Campo de e-mail visível;
+- Campo de senha visível;
+- Botão de entrada visível.
+
+---
+
+## ROUTE-002 — Acesso não autenticado a Pacientes
+
+**Prioridade:** Alta  
+**Tipo:** Segurança e controle de acesso  
+**Automação:** `tests/auth/protected-routes.spec.ts`
+
+```gherkin
+Cenário: ROUTE-002 - Usuário não autenticado tenta acessar Pacientes
+  Dado que o usuário não está autenticado
+  Quando tentar acessar diretamente a rota "/pacientes"
+  Então deve ser redirecionado para a página de login
+  E o formulário de autenticação deve ser apresentado
+```
+
+### Validações automatizadas
+
+- Acesso direto à rota `/pacientes`;
+- Redirecionamento para `/login`;
+- Formulário de autenticação visível.
+
+---
+
+## ROUTE-003 — Acesso não autenticado a Especialidades
+
+**Prioridade:** Alta  
+**Tipo:** Segurança e controle de acesso  
+**Automação:** `tests/auth/protected-routes.spec.ts`
+
+```gherkin
+Cenário: ROUTE-003 - Usuário não autenticado tenta acessar Especialidades
+  Dado que o usuário não está autenticado
+  Quando tentar acessar diretamente a rota "/especialidades"
+  Então deve ser redirecionado para a página de login
+  E o formulário de autenticação deve ser apresentado
+```
+
+### Validações automatizadas
+
+- Acesso direto à rota `/especialidades`;
+- Redirecionamento para `/login`;
+- Formulário de autenticação visível.

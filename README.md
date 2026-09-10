@@ -19,13 +19,23 @@ Projeto de automação de testes End-to-End da aplicação Clínica Médica, uti
 
 ## Cenários automatizados
 
+Atualmente, o projeto possui seis cenários automatizados.
+
 ### Autenticação
 
 | ID | Cenário | Situação |
 |---|---|---|
-| AUTH-001 | Login com credenciais válidas | Implementado |
-| AUTH-002 | Login com senha inválida | Implementado |
-| AUTH-003 | Login com usuário inexistente | Implementado |
+| AUTH-001 | Login com credenciais válidas | Automatizado |
+| AUTH-002 | Login com senha inválida | Automatizado |
+| AUTH-003 | Login com usuário inexistente | Automatizado |
+
+### Rotas protegidas
+
+| ID | Cenário | Situação |
+|---|---|---|
+| ROUTE-001 | Usuário não autenticado tenta acessar o Dashboard | Automatizado |
+| ROUTE-002 | Usuário não autenticado tenta acessar Pacientes | Automatizado |
+| ROUTE-003 | Usuário não autenticado tenta acessar Especialidades | Automatizado |
 
 ## Estrutura do projeto
 
