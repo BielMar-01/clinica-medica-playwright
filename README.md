@@ -19,7 +19,7 @@ Projeto de automação de testes End-to-End da aplicação Clínica Médica, uti
 
 ## Cenários automatizados
 
-Atualmente, o projeto possui seis cenários automatizados.
+Atualmente, o projeto possui dez cenários E2E automatizados.
 
 ### Autenticação
 
@@ -28,6 +28,10 @@ Atualmente, o projeto possui seis cenários automatizados.
 | AUTH-001 | Login com credenciais válidas | Automatizado |
 | AUTH-002 | Login com senha inválida | Automatizado |
 | AUTH-003 | Login com usuário inexistente | Automatizado |
+| AUTH-004 | Login com e-mail vazio | Automatizado |
+| AUTH-005 | Login com senha vazia | Automatizado |
+| AUTH-006 | Login com e-mail e senha vazios | Automatizado |
+| AUTH-007 | Login com formato de e-mail inválido | Automatizado |
 
 ### Rotas protegidas
 

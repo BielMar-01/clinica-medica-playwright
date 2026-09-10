@@ -31,9 +31,13 @@ export class LoginPage {
     await this.passwordInput.fill(senha);
   }
 
+  async clicarEmEntrar(): Promise<void> {
+    await this.submitButton.click();
+  }
+
   async entrar(email: string, senha: string): Promise<void> {
     await this.preencherEmail(email);
     await this.preencherSenha(senha);
-    await this.submitButton.click();
+    await this.clicarEmEntrar();
   }
 }

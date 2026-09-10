@@ -261,3 +261,22 @@ Cenário: ROUTE-003 - Usuário não autenticado tenta acessar Especialidades
 - Acesso direto à rota `/especialidades`;
 - Redirecionamento para `/login`;
 - Formulário de autenticação visível.
+
+
+## Atualização do `docs\BDD.md`
+
+Adicione ao final:
+
+````markdown
+---
+
+# Funcionalidade: Validação do formulário de login
+
+Como usuário da Clínica Médica  
+Quero receber validações ao preencher incorretamente o formulário  
+Para identificar quais dados devem ser corrigidos antes da autenticação
+
+## Contexto
+
+```gherkin
+Dado que o usuário acessou a página de logins
