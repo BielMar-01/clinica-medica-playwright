@@ -5,12 +5,18 @@ export class LoginPage {
   readonly emailInput: Locator;
   readonly passwordInput: Locator;
   readonly submitButton: Locator;
+  readonly errorAlert: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.emailInput = page.getByTestId('login-email-input');
     this.passwordInput = page.getByTestId('login-password-input');
     this.submitButton = page.getByTestId('login-submit-button');
+
+    this.errorAlert = page
+      .getByTestId('login-error-message')
+      .or(page.getByRole('alert'))
+      .first();
   }
 
   async acessar(): Promise<void> {
